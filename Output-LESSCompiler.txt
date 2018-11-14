@@ -1,0 +1,19 @@
+﻿30/10/2018 20:38:21: LESS file catalog for ShopOnline built in 0.01 seconds
+30/10/2018 20:38:46: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:38:46: 'node' is not recognized as an internal or external command,
+operable program or batch file.
+30/10/2018 20:38:49: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:38:49: 'node' is not recognized as an internal or external command,
+operable program or batch file.
+30/10/2018 20:38:50: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:38:50: 'node' is not recognized as an internal or external command,
+operable program or batch file.
+30/10/2018 20:39:16: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:39:16: 'node' is not recognized as an internal or external command,
+operable program or batch file.
+30/10/2018 20:39:50: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:39:50: 'node' is not recognized as an internal or external command,
+operable program or batch file.
+30/10/2018 20:40:49: lessc --no-color "LayoutAdmin.less" --relative-urls --autoprefix="> 1%" "LayoutAdmin.css"
+30/10/2018 20:40:49: 'node' is not recognized as an internal or external command,
+operable program or batch file.
