@@ -10,3 +10,15 @@ D:\ShopOnline\_Models\obj\Debug\_Models.csproj.CoreCompileInputs.cache
 D:\ShopOnline\_Models\obj\Debug\_Models.csproj.CopyComplete
 D:\ShopOnline\_Models\obj\Debug\_Models.dll
 D:\ShopOnline\_Models\obj\Debug\_Models.pdb
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\_Models.dll.config
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\_Models.dll
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\_Models.pdb
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\EntityFramework.dll
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\EntityFramework.xml
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.csprojAssemblyReference.cache
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.csproj.CoreCompileInputs.cache
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.csproj.CopyComplete
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.dll
+D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.pdb
