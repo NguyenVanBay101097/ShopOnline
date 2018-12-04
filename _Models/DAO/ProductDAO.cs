@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace _Models.DAO
@@ -36,6 +37,14 @@ namespace _Models.DAO
                 return 0;
             }
         }
+        public List<Product> ListNewProduct(int top)
+        {
+            return dt.Products.OrderByDescending(x => x.CreateBy).Take(top).ToList();
+        }
+        public List<Product> ListHotProduct(int top)
+        {
+            return dt.Products.Where(x=>x.Tophot!=null).OrderByDescending(x => x.CreateBy).Take(top).ToList();
+        }
         public int Edit(Product product)
         {
             try
@@ -67,6 +76,26 @@ namespace _Models.DAO
             {
                 return 0;
             }
+        }
+        public static string convertToUnSign3(string s)
+        {
+            System.Text.RegularExpressions.Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        public void ChuyenDoi(List<Product> products)
+        {
+            foreach (var item in products)
+            {
+                var product = dt.Products.Find(item.ProductID);
+                product.MetaTitle = convertToUnSign3(item.ProductName).Replace(" ","-").ToLower();
+                dt.SaveChanges();
+            }
+        }
+        public void ChuyenDoi(Product products)
+        {
+            var product = dt.Products.Find(products.ProductID);
+            product.MetaTitle = convertToUnSign3(product.ProductName).Replace(" ", "-").ToLower();
         }
         public void Remove(int id)
         {

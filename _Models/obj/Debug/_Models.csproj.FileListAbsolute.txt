@@ -22,3 +22,15 @@ D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.cspr
 D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.csproj.CopyComplete
 D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.dll
 D:\HOC KY 1 2018-2019\Thuctapchuyenmon\ShopOnline\_Models\obj\Debug\_Models.pdb
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\_Models.dll.config
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\_Models.dll
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\_Models.pdb
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\EntityFramework.dll
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\EntityFramework.xml
+D:\OnlineShopGithubBay\ShopOnline\_Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\OnlineShopGithubBay\ShopOnline\_Models\obj\Debug\_Models.csprojAssemblyReference.cache
+D:\OnlineShopGithubBay\ShopOnline\_Models\obj\Debug\_Models.csproj.CoreCompileInputs.cache
+D:\OnlineShopGithubBay\ShopOnline\_Models\obj\Debug\_Models.csproj.CopyComplete
+D:\OnlineShopGithubBay\ShopOnline\_Models\obj\Debug\_Models.dll
+D:\OnlineShopGithubBay\ShopOnline\_Models\obj\Debug\_Models.pdb

@@ -2,235 +2,155 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Bootstrap core CSS-->
-    <link href="~/Asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Custom fonts for this template-->
-    <link href="~/Asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- Page level plugin CSS-->
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
-    <link href="~/Asset/css/Style.css" rel="stylesheet" />
+    <title>Free Home Shoppe Website Template | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/Asset/Client/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/Asset/Client/css/slider.css" rel="stylesheet" type="text/css" media="all">
+    @RenderSection("csschirld",required:false)
+    
+    <script type="text/javascript" src="/Asset/Client/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/Asset/Client/js/move-top.js"></script>
+    <script type="text/javascript" src="/Asset/Client/js/easing.js"></script>
+    <script type="text/javascript" src="/Asset/Client/js/startstop-slider.js"></script>
+
 </head>
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <div class="header-body">
-                <div class="header-top">
-                    <nav class="navbar menu-top navbar-expand-sm">
-                        <a class="navbar-brand" href="#">
-                            <img src="/Data/images/Logo/Logo.png" id="imgLogo" class="img-responsive" width="100" height="100" />
-                        </a>
-                        <!-- Toggler/collapsibe Button -->
-                        <button class="navbar-toggler  bg-dark navbar-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Trang chủ</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Sản phẩm</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">giải pháp</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">download</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">xem demo</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">tin tức</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">giới thiệu </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Liên hệ</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i></a>
-                                </li>
+    <div class="wrap">
+        <div class="header">
+            <div class="headertop_desc">
+                <div class="call">
+                    <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+                </div>
+                <div class="account_desc">
+                    @{ Html.RenderAction("TopMenu", "Home");}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="header_top">
+                <div class="logo">
+                    <a href="index.html"><img src="/Asset/Client/images/logo.png" alt="" /></a>
+                </div>
+                <div class="cart">
+                    <p>
+                        Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+                            0 item(s) - $0.00
+                            <ul class="dropdown">
+                                <li>you have no items in your Shopping cart</li>
                             </ul>
                         </div>
-                    </nav>
-                </div><!--End hd-top-->
-                <div style="clear:both;" class="header-bottom">
-                    <div class="title-list pointer">
-                        <i class="fas fa-list-ul" style="color:white;"></i><span>DANH MỤC SẢN PHẨM</span>
-                    </div><!--End title-list-->
-                    <div class="header-bottom-right">
-                        <div class="search-list">
-                            <select class="pointer">
-                                <option value="0">--Danh mục--</option>
-                                <option value="1">ĐÀN PIANO</option>
-                                <option value="2">ĐÀN GUITAR</option>
-                                <option value="3">ĐÀN ORGAN</option>
-                            </select>
-                        </div>
+                    </p>
+                </div>
+                <script type="text/javascript">
+                    function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    }
+                    DropDown.prototype = {
+                        initEvents: function () {
+                            var obj = this;
 
+                            obj.dd.on('click', function (event) {
+                                $(this).toggleClass('active');
+                                event.stopPropagation();
+                            });
+                        }
+                    }
 
-                        <div class="search">
-                            <form action="Timkiem.html" method="get">
-                                <input type="text" id="txtsearch" name="tukhoa" placeholder="Nhập từ khóa tìm kiếm" autocomplete="on">
-                                <button type="submit" id="btnSearch" class="search-button pointer">TÌM</button>
-                            </form>
-                        </div><!--End search-->
-                    </div> <!--end header bottom right-->
-                </div><!--End header-bottom-->
-            </div><!--End headder-body-->
-        </div><!--end header-->
-        <div style="clear:both;" id="content">
-            <div id="content-left">
-                    <div class="list">
+                    $(function () {
+
+                        var dd = new DropDown($('#dd'));
+
+                        $(document).click(function () {
+                            // all dropdowns
+                            $('.wrapper-dropdown-2').removeClass('active');
+                        });
+
+                    });
+
+                </script>
+                <div class="clear"></div>
+            </div>
+            <div class="header_bottom">
+              @{Html.RenderAction("MainMenu", "Home"); }
+                <div class="search_box">
+                    <form>
+                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+            @RenderSection("slide",required:false)
+            
+        </div>
+        <div class="main">
+            @RenderBody()
+           
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Customer Service</a></li>
+                        <li><a href="#">Advanced Search</a></li>
+                        <li><a href="delivery.html">Orders and Returns</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Why buy from us</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Customer Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="contact.html">Site Map</a></li>
+                        <li><a href="#">Search Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>My account</h4>
+                    <ul>
+                        <li><a href="contact.html">Sign In</a></li>
+                        <li><a href="index.html">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="contact.html">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><span>+91-123-456789</span></li>
+                        <li><span>+00-123-000000</span></li>
+                    </ul>
+                    <div class="social-icons">
+                        <h4>Follow Us</h4>
                         <ul>
-                            <li>
-                                <a href="#">ĐÀN GUITAR</a>
-                                <ul>
-                                    <li><a href="#">GUITAR YAMAHA</a></li>
-                                    <li><a href="#">GUITAR ACCOUSTIC</a></li>
-                                    <li><a href="#">GUITAR CLASSIC</a></li>
-                                    <li><a href="#">GUITAR ĐIỆN</a></li>
-                                    <li><a href="#">GUITAR 12 DÂY</a></li>
-                                    <li><a href="#">GUITAR HAWAII</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">ĐÀN PIANO</a>
-                                <ul>
-                                    <li><a href="#">PIANO YAMAHA</a></li>
-                                    <li><a href="#">PIANO KAWAI</a></li>
-                                    <li><a href="#">PIANO JS</a></li>
-                                    <li><a href="#">PIANO CASIO</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">ĐÀN ORGAN</a>
-                                <ul>
-                                    <li><a href="#">CAMERA CASIO</a></li>
-                                    <li><a href="#">CAMERA YAMAHA</a></li>
-                                    <li><a href="#">CAMERA ROLAND</a></li>
-                                    <li><a href="#">CAMERA TYROS</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#" target="_blank"><img src="/Asset/Client/images/facebook.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="/Asset/Client/images/twitter.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="/Asset/Client/images/skype.png" alt="" /> </a></li>
+                            <li><a href="#" target="_blank"> <img src="/Asset/Client/images/dribbble.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"> <img src="/Asset/Client/images/linkedin.png" alt="" /></a></li>
+                            <div class="clear"></div>
                         </ul>
-                    </div><!--End list-->
-                    <div class="block-left block ">
-                        <div class="block-title">
-                           
-                            <h2> <i class="fa fa-newspaper"></i><a href="Tintuc.html">TIN TỨC</a></h2>
-                        </div>
-                        <div class="block-content">
-                            <ul class="ul-tintuc list-group">
-                                <li>
-                                    <h3 class="title">
-                                        <a href="tintucchitiet.html" title="Top 3 cây đàn piano điện dưới 10 triệu đáng để mua nhất?">
-                                            HAPPY FRIDAY: HAPPY TEACHER’S DAY
-                                        </a>
-                                        <img src="~/Data/anh_ngoaile/new.gif" alt="Alternate Text" />
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3 class="title">
-                                        <a href="tintucchitiet.html" title="Top 7 quán cafe có piano cho khách chơi tại TpHCM">WORKSHOP: INSIDE THE PIANO</a>
-                                        <img src="~/Data/anh_ngoaile/new.gif" alt="Alternate Text" />
-
-
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3 class="title">
-                                        <a href="tintucchitiet.html" title="Đàn ukulele là gì? Giá bán bao nhiêu tiền? Mua ở đâu rẻ nhất?">CASIO NHẬN GIẢI THƯỞNG 2018 EDITORS CHOICE</a>
-                                        <img src="~/Data/anh_ngoaile/new.gif" alt="Alternate Text" />
-
-
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3 class="title">
-                                        <a href="http://pianofingers.vn/thu-vien-organ-keyboard/cach-hoc-dan-organ-yamaha-nhanh-nhat.html" title="Cách học đàn organ yamaha nhanh nhất: Xem là biết đánh">Cách học đàn organ yamaha nhanh nhất: Xem là biết đánh</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3 class="title">
-                                        <a href="tintucchitiet.html" title="Mua đàn Organ trả góp TP. HCM ở đâu? chính sách như thế nào?">Mua đàn Organ trả góp TP. HCM ở đâu? chính sách như thế nào?</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3 class="title">
-                                        <a href="tintucchitiet.html" title="Top 4 Organ giá 1 đến 3 triệu: Kho đàn mới cũ cho bạn lựa chọn">Top 4 Organ giá 1 đến 3 triệu: Kho đàn mới cũ cho bạn lựa chọn</a>
-                                    </h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> <!--end tintuc-->
-                   
-                </div><!--end content left-->
-            <div id="content-right">
-                @RenderBody()
-            </div> @*end content right*@
-
-        </div> @*end content*@
-        <div style="margin-bottom:20px;clear:both;"></div>
-        <div class="footer">
-            <div class="footer-top">
-                <div class="col1">
-                    <ul>
-                        <li><h4>CÔNG TY TNHH thiết bị an ninh BHH</h4></li>
-                        <li>Địa chỉ: 164/8 đoàn thị liên, phường phú lợi, tp.thủ dầu một, tỉnh bình dương</li>
-                        <li>email: <a href="mailto:baynguyen101097@gmail.com"> baynguyen101097@gmail.com</a></li>
-                        <li>số điện thoại :<a href="tel:01657142225"> 01657142225</a></li>
-                        <li> hotline: 0909689751</li>
-                    </ul>
-                </div>
-                <div class="col2">
-                    <ul>
-                        <li> trung tâm sửa chữa cung cấp thiết bị an ninh toàn cầu</li>
-                        <li> điạ chỉ: 165/8 đoàn thị liên, tp. thủ dầu một, tỉnh bình dương</li>
-                        <li>email: <a href="mailto:baynguyen101097@gmail.com"> baynguyen101097@gmail.com</a></li>
-                        <li>số điện thoại :<a href="tel:01657142225"> 01657142225</a></li>
-                    </ul>
-                </div>
-                <div class="col3">
-                    <ul>
-                        <li><a href="huongdanmuahang.html">Hướng dẫn mua hàng</a></li>
-                        <li><a href="Lienhe.html">Liên hệ và góp ý</a></li>
-                        <li><a href="thanhtoanvabaomat.html">thanh toán và bảo mật</a></li>
-                        <li><a href="hinhthucgiaohang.html">giao hàng-đổi trả</a></li>
-                        <li><a href="chinhsachbaohanh.html">Chính sách bảo hành</a></li>
-
-                    </ul>
-                </div>
-                <div class="col4">
-                    <img width="50%" src="~/Data/images/Logo/Logo.png" alt="piano organ guitar thu thien " /> <br />
-                    trao đổi qua facebook:   <a target="_blank" href="facebook.com">
-                        <i style="font-size:40px; color:#6baed0" class="fab fa-facebook-square"></i>
-                    </a> <br />
-                    theo dõi trên youtube: <a href="youtube.com">
-                        <i style="font-size:40px; color:#d77272" class="fab fa-youtube-square"></i>
-
-                    </a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright">© 2018 <span style="color:red;">thien-thu organ piano guitar</span>. All Rights Reserved. Designed By <span style="color:red;">nguyen van bay</span></p>
-                <div class="pay">
-                    <img src="~/Data/anh_ngoaile/pay1.png" alt="Alternate Text" />
-                    <img src="~/Data/anh_ngoaile/pay2.png" alt="Alternate Text" />
-                    <img src="~/Data/anh_ngoaile/pay3.png" alt="Alternate Text" />
-                    <img src="~/Data/anh_ngoaile/pay4.png" alt="Alternate Text" />
-                </div>
-            </div>
-            @RenderSection("jsFooter", false)
-        </div> <!--end footer-->
-    </div> @*end wrapper*@
+        </div>
+        <div class="copy_right">
+            <p>&copy; 2013 home_shoppe. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
 </body>
 </html>

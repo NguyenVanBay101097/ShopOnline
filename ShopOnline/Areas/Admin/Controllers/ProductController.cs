@@ -18,6 +18,8 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             ViewBag.searchString = searchString;
             ProductDAO productDAO = new ProductDAO();
+           
+
             if (searchString == "")
             {
                 var listProduct = productDAO.SelectAll().ToPagedList(page, pagesize);
@@ -38,6 +40,7 @@ namespace ShopOnline.Areas.Admin.Controllers
         [HttpPost,ValidateInput(true)]
         public ActionResult Create(Product product,string tempstatus)
         {
+
             if (ModelState.IsValid)
             {
                 if (tempstatus == "Kích Hoạt")
@@ -48,7 +51,9 @@ namespace ShopOnline.Areas.Admin.Controllers
                 product.CreateDate = DateTime.Now;
                 product.CreateBy = BaseController.NguoiDungHienTai.UserAccount;
                 ProductDAO productDAO = new ProductDAO();
+                
                 var check = productDAO.Create(product);
+                productDAO.ChuyenDoi(product);
                 if (check > 0)
                 {
                     TempData["msg"] = MessageBox.Show("Create successfully");

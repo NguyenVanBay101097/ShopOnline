@@ -71,12 +71,17 @@ namespace ShopOnline.Areas.Admin.Controllers
             return View(menu);
         }
         [HttpPost]
-        public ActionResult Edit(Menu menu,int id)
+        public ActionResult Edit(Menu menu,int id,string tempstatus)
         {
             SetMenuType();
             menu.MenuID = id;
             if (ModelState.IsValid)
             {
+                if (tempstatus == "Kích Hoạt")
+                {
+                    menu.Status = true;
+                }
+                else menu.Status = false;
                 MenuDAO menuDAO = new MenuDAO();
                 var check = menuDAO.Edit(menu);
                 if (check > 0)
