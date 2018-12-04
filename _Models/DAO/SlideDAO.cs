@@ -20,7 +20,7 @@ namespace _Models.DAO
         }
         public IEnumerable<Slide> SelectAll()
         {
-            return dt.Slides.OrderByDescending(x => x.CreateDate);
+            return dt.Slides.OrderByDescending(x => x.CreateDate).Where(x=>x.Status==true);
         }
         public IEnumerable<Slide> SelectWithConditon(string searchString)
         {

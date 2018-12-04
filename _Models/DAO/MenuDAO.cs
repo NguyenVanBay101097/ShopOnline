@@ -18,6 +18,10 @@ namespace _Models.DAO
         {
             return dt.Menus.Find(id);
         }
+        public List<Menu> ListMenu(int MenuTypeID)
+        {
+            return dt.Menus.Where(x => x.MenuTypeID == MenuTypeID).ToList();
+        }
         public IEnumerable<Menu> SelectAll()
         {
             return dt.Menus.OrderBy(x => x.MenuID);
