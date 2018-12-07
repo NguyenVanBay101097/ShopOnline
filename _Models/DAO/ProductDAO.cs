@@ -10,10 +10,19 @@ namespace _Models.DAO
 {
     public class ProductDAO
     {
-        private OnlineShop dt;
+         OnlineShop dt=null;
         public ProductDAO()
         {
             dt = new OnlineShop();
+        }
+        public List<Product> GetProductsRelated(int ProductCategoryID)
+        {
+            return dt.Products.Where(x => x.CategoryID == ProductCategoryID).OrderByDescending(x => x.Price).ToList();
+        }
+        public List<Product> ProductsRelated(int id)
+        {
+            var proDuct = dt.Products.Find(id);
+            return dt.Products.Where(x => x.ProductID != id && x.CategoryID == proDuct.CategoryID).Take(4).ToList();
         }
         public Product getProduct(int id)
         {
@@ -28,6 +37,8 @@ namespace _Models.DAO
         {
             try
             {
+                product.MetaTitle = convertToUnSign3(product.ProductName).Replace(" ", "-").ToLower();
+
                 dt.Products.Add(product);
                 dt.SaveChanges();
                 return 1;
@@ -35,6 +46,16 @@ namespace _Models.DAO
             catch
             {
                 return 0;
+            }
+        }
+        public void HamLinhDong()
+        {
+            var list = dt.Products.ToList();
+            foreach (var item in list)
+            {
+                var product = dt.Products.Find(item.ProductID);
+                product.Description = "Đây là một trong những mấu tốt nhất trên thị trường, chắc chắn sẽ làm bạn hài lòng";
+                dt.SaveChanges();
             }
         }
         public List<Product> ListNewProduct(int top)

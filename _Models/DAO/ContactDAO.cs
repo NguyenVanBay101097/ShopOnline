@@ -14,6 +14,19 @@ namespace _Models.DAO
         {
             dt = new OnlineShop();
         }
+        public bool InsertFeedback(Feedback feedback)
+        {
+            try
+            {
+                dt.Feedbacks.Add(feedback);
+                dt.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public bool ChangeStatus(int id)
         {
             var contact = dt.Contacts.Find(id);

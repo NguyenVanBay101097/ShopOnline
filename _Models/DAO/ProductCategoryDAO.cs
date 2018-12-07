@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace _Models.DAO
@@ -16,7 +17,8 @@ namespace _Models.DAO
         }
         public ProductCategory GetProductCategory(int? id)
         {
-            return dt.ProductCategories.Find(id);
+            var product = dt.Products.Find(id);
+            return dt.ProductCategories.Find(product.CategoryID);
         }
         public IEnumerable<ProductCategory> SelectAll()
         {
@@ -27,10 +29,19 @@ namespace _Models.DAO
             return dt.ProductCategories.Where(x => x.CategoryName == searchString
             || x.CategoryID.Equals(searchString)).OrderBy(x => x.CategoryName);
         }
+        public static string convertToUnSign3(string s)
+        {
+            System.Text.RegularExpressions.Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        
         public int Create(ProductCategory productCategory)
         {
             try
             {
+                productCategory.MetaTitle = convertToUnSign3(productCategory.CategoryName).Replace(" ", "-").ToLower();
+
                 dt.ProductCategories.Add(productCategory);
                 dt.SaveChanges();
                 return 1;

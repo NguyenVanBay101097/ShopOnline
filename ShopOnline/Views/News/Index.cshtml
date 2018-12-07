@@ -1,0 +1,52 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<_Models.EF.Content>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Asset/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<style>
+    div.grid_1_of_4.images_1_of_4 {
+        width: 700px;
+    }
+</style>
+<div class="header_slide">
+    <div class="header_bottom_left">
+        <div class="categories">
+            <h2 style="text-align:center;font-size:25px;">Danh Mục Tin Tức</h2>
+            @{ Html.RenderAction("ListNews", "News");}
+
+        </div>
+    </div>
+    <div class="header_bottom_right">
+        <h2>Tất Cả Tin Tức</h2>
+
+        @foreach (var item in Model)
+        {
+            <div class="section group">
+                @{var url = "/tin-tuc/" + item.MetaTitle + "-" + item.ContentID;
+                }
+                <div class="grid_1_of_4 images_1_of_4">
+                    <a href="@url"><h3>@item.ContentName</h3></a>
+                    <a href="@url"><img src="@item.Image" width="150" height="150" alt="noImage"></a>
+                    <p>@item.Description</p>
+
+                </div>
+            </div>
+        }
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { @page = page }))
+
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+
+<script src="~/Asset/vendor/jquery/jquery.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>

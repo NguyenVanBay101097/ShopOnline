@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace _Models.DAO
@@ -10,10 +11,15 @@ namespace _Models.DAO
     public class NewsDAO
     {
         public static string msgerror = "";
-        private OnlineShop dt = null;
+         OnlineShop dt = null;
         public NewsDAO()
         {
             dt = new OnlineShop();
+        }
+        public IEnumerable<Content> getContens(int NewsID)
+        {
+            if (NewsID == 0) return dt.Contents.OrderByDescending(x => x.CreateDate);
+            return dt.Contents.Where(x => x.NewsID == NewsID).OrderByDescending(x => x.CreateDate);
         }
         public bool ChangeStatus(int newsid)
         {
@@ -44,6 +50,21 @@ namespace _Models.DAO
                 return 0;
             }
 
+        }
+        public static string convertToUnSign3(string s)
+        {
+            System.Text.RegularExpressions.Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            string temp = s.Normalize(NormalizationForm.FormD);
+            return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        public void ChuyenDoi(List<News> listnews)
+        {
+            foreach (var item in listnews)
+            {
+                var news = dt.News.Find(item.NewsID);
+                news.MetaTitle = convertToUnSign3(item.NewsName).Replace(" ", "-").ToLower();
+                dt.SaveChanges();
+            }
         }
         public News getNews(int id)
         {
@@ -82,7 +103,8 @@ namespace _Models.DAO
         {
             try
             {
-                
+                news.MetaTitle = convertToUnSign3(news.NewsName).Replace(" ", "-").ToLower();
+
                 dt.News.Add(news);
                 dt.SaveChanges();
                 return 1;
@@ -100,7 +122,7 @@ namespace _Models.DAO
         }
         public string TenNews(int? ParentNewsID)
         {
-            if (ParentNewsID == null) return "Không nằm trong loại nào cả";
+            if (ParentNewsID == null||dt.News.SingleOrDefault(x=>x.NewsID==ParentNewsID)==null) return "Không nằm trong loại nào cả";
             var ParentNews = dt.News.Find(ParentNewsID);
             return ParentNews.NewsName;
         }

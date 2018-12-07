@@ -44,6 +44,7 @@
                             <th>Tên Nội Dung</th>
                             <th>Mô Tả</th>
                             <th>Hình Ảnh</th>
+                            <th>Chi Tiết</th>
                             <th>Loại News</th>
                             <th>Ngày Tạo</th>
                             <th>Số lượt xem</th>
@@ -56,7 +57,7 @@
                             <tr id="row_@item.ContentID">
                                 <td>
 
-                                    @Ajax.ActionLink("Xóa", "Remove", new { IDnguoiDungCanXoa = item.ContentID }, new AjaxOptions()
+                                    @Ajax.ActionLink("Xóa", "Remove", new { Id = item.ContentID }, new AjaxOptions()
                                {
                                    Confirm = "bạn có muốn xóa bản ghi này?",
                                    OnComplete = "$('#row_" + @item.ContentID + "').remove();",
@@ -69,8 +70,9 @@
                                 </td>
                                 <td>@item.ContentName</td>
                                 <td>@item.Description</td>
-                                <td><img src="@item.Image" height="100px" class="img-responsive" /></td>
-                                <td>@item.NewsID</td>
+                                <td><img src="@item.Image" height="100px" alt="No image" width="100px" class="img-responsive" /></td>
+                                <td>@Html.Raw(item.Detail)</td>
+                                <td>@item.News.NewsName</td>
 
                                 <td>@item.CreateDate</td>
                                 <td>@item.Viewcount</td>
