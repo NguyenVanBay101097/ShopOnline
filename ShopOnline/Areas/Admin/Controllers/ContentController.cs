@@ -80,8 +80,8 @@ namespace ShopOnline.Areas.Admin.Controllers
         }
         public void SetViewBagEditNews(int id = 1)
         {
-            NewsDAO contentDAO = new NewsDAO();
-            ViewBag.TenNews = new SelectList(contentDAO.ListAll(), "CategoryID", "CategoryName", id);
+            NewsDAO newsDAO = new NewsDAO();
+            ViewBag.TenNews = new SelectList(newsDAO.ListAll(), "NewsID", "NewsName", id);
         }
         [HttpPost, ValidateInput(false)]
         public ActionResult Edit(Content contentChange, string trangthai)
@@ -114,10 +114,10 @@ namespace ShopOnline.Areas.Admin.Controllers
             return View("Edit");
         }
         [HttpDelete]
-        public ActionResult Remove(int IDnguoiDungCanXoa)
+        public ActionResult Remove(int id)
         {
             ContentDAO contentDAO = new ContentDAO();
-            contentDAO.Remove(IDnguoiDungCanXoa);
+            contentDAO.Remove(id);
             return RedirectToAction("Index", "Content");
         }
         [HttpPost]

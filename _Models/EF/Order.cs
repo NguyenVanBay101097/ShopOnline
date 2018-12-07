@@ -17,12 +17,22 @@ namespace _Models.EF
 
         public int OrderID { get; set; }
 
+        public DateTime? CreateDay { get; set; }
+
+        public int? CustomerID { get; set; }
+
         [StringLength(50)]
-        public string CustomerEmail { get; set; }
+        public string ShipName { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public int? ShipPhone { get; set; }
 
-        public virtual CustomerAccount CustomerAccount { get; set; }
+        [StringLength(50)]
+        public string ShipAdress { get; set; }
+
+        [StringLength(50)]
+        public string ShipEmail { get; set; }
+
+        public bool status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

@@ -314,3 +314,10 @@ D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\roslyn\vbc.exe.config
 D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\roslyn\vbc.rsp
 D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\roslyn\VBCSCompiler.exe
 D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\roslyn\VBCSCompiler.exe.config
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\Common.dll
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\Common.pdb
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\BotDetect.dll
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\BotDetect.Web.Mvc.dll
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\System.Data.SQLite.dll
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\System.Data.SQLite.xml
+D:\OnlineShopGithubBay\ShopOnline\ShopOnline\bin\System.Data.SQLite.dll.config

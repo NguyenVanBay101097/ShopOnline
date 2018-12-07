@@ -13,13 +13,69 @@ namespace ShopOnline
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           
+            routes.IgnoreRoute("{*botdetect}",
+       new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
             routes.MapRoute(
                 name: "Product Category",
                 url: "san-pham/{metatitle}-{id}",
                 defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                 namespaces: new[] { "ShopOnline.Controllers" }
             );
+            routes.MapRoute(
+               name: "Register",
+               url: "dang-ki",
+               defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+               namespaces: new[] { "ShopOnline.Controllers" }
+           );
+            routes.MapRoute(
+                name: "List News",
+                url: "tin-tuc-{metatitle}-{id}",
+                defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "ShopOnline.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Contact",
+                url: "lien-he",
+                defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "ShopOnline.Controllers" }
+            );
+
+            routes.MapRoute(
+               name: "Complete Shopping",
+               url: "hoan-thanh",
+               defaults: new { controller = "Cart", action = "Complete", id = UrlParameter.Optional },
+               namespaces: new[] { "ShopOnline.Controllers" }
+           );
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
+                namespaces: new[] { "ShopOnline.Controllers" }
+            );
+            routes.MapRoute(
+               name: "Remove Cart",
+               url: "remove-gio-hang",
+               defaults: new { controller = "Cart", action = "RemoveCart", id = UrlParameter.Optional },
+               namespaces: new[] { "ShopOnline.Controllers" }
+           );
+            routes.MapRoute(
+              name: "Payment ",
+              url: "thanh-toan-gio-hang",
+              defaults: new { controller = "Cart", action = "Payment", id = UrlParameter.Optional },
+              namespaces: new[] { "ShopOnline.Controllers" }
+          );
+            routes.MapRoute(
+               name: "Update Cart",
+               url: "removeall-gio-hang",
+               defaults: new { controller = "Cart", action = "DeleteAll", id = UrlParameter.Optional },
+               namespaces: new[] { "ShopOnline.Controllers" }
+           );
+            routes.MapRoute(
+               name: " Cart",
+               url: "gio-hang",
+               defaults: new { controller = "Cart", action = "UpdateQuantity", id = UrlParameter.Optional },
+               namespaces: new[] { "ShopOnline.Controllers" }
+           );
             routes.MapRoute(
                name: "Product Detail",
                url: "chi-tiet/{metatitle}-{id}",

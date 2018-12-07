@@ -21,7 +21,7 @@ namespace _Models.EF
 
         public int Quantity { get; set; }
 
-        public double CurrentPrice { get; set; }
+        public double PriceWhenBuyAtTime { get; set; }
 
         public virtual Order Order { get; set; }
 

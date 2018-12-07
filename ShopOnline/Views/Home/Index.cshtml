@@ -14,6 +14,7 @@
     <div class="header_slide">
         <div class="header_bottom_left">
             <div class="categories">
+                <h2 style="text-align:center;font-size:25px" >Danh Mục Sản Phẩm</h2>
                 @{ Html.RenderAction("ListProductCategory", "ProductCategory");}
 
             </div>
@@ -66,9 +67,9 @@
             <div class="grid_1_of_4 images_1_of_4">
                 <a href="@url"><img src="@item.Image" width="213.81px" height="178.17px" alt="@item.ProductName" /></a>
                 <h2>
-                    @if (item.ProductName.Length <= 22)
+                    @if (item.ProductName.Length <= 23)
                     {
-                        string productname = new string(' ', 8);
+                        string productname = new string('-', 14);
                         @Html.Raw(item.ProductName + productname);
                     }
                     else
@@ -107,7 +108,7 @@
                         }
                     </div>
                     <div class="add-cart">
-                        <h4><a href="preview.html">Thêm Vào Giỏ Hàng</a></h4>
+                        <h4><a href="them-gio-hang?productID=@item.ProductID&quantity=1">Thêm Vào Giỏ Hàng</a></h4>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -175,7 +176,7 @@
                         }
                     </div>
                     <div class="add-cart">
-                        <h4><a href="preview.html">Thêm Vào Giỏ Hàng</a></h4>
+                        <h4><a href="them-gio-hang?productID=@item.ProductID&quantity=1">Thêm Vào Giỏ Hàng</a></h4>
                     </div>
                     <div class="clear"></div>
                 </div>

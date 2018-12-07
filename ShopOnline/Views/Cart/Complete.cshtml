@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Complete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="alert-success">Đặt Mua Thành Công</div>
+@if (TempData["msg"] != null)
+{
+    @Html.Raw(TempData["msg"])
+}

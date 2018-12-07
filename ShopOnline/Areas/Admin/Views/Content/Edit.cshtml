@@ -68,7 +68,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Image, new { @id = "txtImage", @disabled = "disabled" })
+                @Html.TextBoxFor(model => model.Image, new { @id = "txtImage" })
                 <a id="btnSelectImage" href="#">Chọn ảnh</a>
                 @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>

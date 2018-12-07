@@ -68,11 +68,6 @@ namespace _Models.EF
                 .Property(e => e.Tags)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Content>()
-                .HasMany(e => e.Tags1)
-                .WithMany(e => e.Contents)
-                .Map(m => m.ToTable("TagContent").MapLeftKey("ContentID").MapRightKey("TagID"));
-
             modelBuilder.Entity<CustomerAccount>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
@@ -86,9 +81,8 @@ namespace _Models.EF
                 .IsUnicode(false);
 
             modelBuilder.Entity<CustomerAccount>()
-                .HasMany(e => e.Orders)
-                .WithOptional(e => e.CustomerAccount)
-                .HasForeignKey(e => e.CustomerEmail);
+                .Property(e => e.ConfirmPassWord)
+                .IsUnicode(false);
 
             modelBuilder.Entity<MenuType>()
                 .HasMany(e => e.Menus)
@@ -115,10 +109,6 @@ namespace _Models.EF
                 .HasMany(e => e.Contents)
                 .WithRequired(e => e.News)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.CustomerEmail)
-                .IsUnicode(false);
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderDetails)
